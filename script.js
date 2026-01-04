@@ -1,3 +1,18 @@
+/* =========================
+   CATEGORY IMAGE LOGIC
+   (THIS IS WHAT FIXES EMPTY IMAGES)
+========================= */
+function getCategoryImage(section){
+  if(section.includes("Soup")) return "images/soup.jpg";
+  if(section.includes("Starters")) return "images/starters.jpg";
+  if(section.includes("Biryani")) return "images/biryani.jpg";
+  if(section.includes("Rice")) return "images/rice.jpg";
+  return "images/curry.jpg";
+}
+
+/* =========================
+   FULL MENU DATA
+========================= */
 const menuData = {
   "Soups": [
     ["Chicken Soup",99],
@@ -51,36 +66,41 @@ const menuData = {
   ]
 };
 
-/* -------- RENDER MENU -------- */
+/* =========================
+   RENDER MENU
+========================= */
 const menu = document.getElementById("menu");
 
-for (let section in menuData) {
-  const div = document.createElement("div");
-  div.className = "section";
-  div.innerHTML = `<h2>${section}</h2><div class="items"></div>`;
-  const itemsDiv = div.querySelector(".items");
+for(let section in menuData){
+  const block = document.createElement("div");
+  block.className = "section";
+  block.innerHTML = `<h2>${section}</h2><div class="items"></div>`;
+  const itemsDiv = block.querySelector(".items");
 
   menuData[section].forEach(([name,price])=>{
     itemsDiv.innerHTML += `
       <div class="item">
-        ${section==="Soups" ? `<img src="soup.jpg">` : ``}
+        <img src="${getCategoryImage(section)}" alt="${section}">
         <div>
-          <strong>${name}</strong><br>₹${price}<br>
+          <strong>${name}</strong><br>
+          ₹${price}<br>
           <button onclick="addToCart('${name}',${price})">Add</button>
         </div>
-      </div>`;
+      </div>
+    `;
   });
 
-  menu.appendChild(div);
+  menu.appendChild(block);
 }
 
-/* -------- CART -------- */
+/* =========================
+   CART LOGIC
+========================= */
 let cart = {};
 
-function addToCart(name,price){
-  cart[name] = cart[name]
-    ? {...cart[name], qty:cart[name].qty+1}
-    : {price,qty:1};
+function addToCart(name, price){
+  if(cart[name]) cart[name].qty++;
+  else cart[name] = {price, qty:1};
   renderCart();
 }
 
@@ -90,47 +110,92 @@ function removeItem(name){
 }
 
 function renderCart(){
-  const box=document.getElementById("cartItems");
-  const totalBox=document.getElementById("total");
-  box.innerHTML="";
-  let total=0;
+  const box = document.getElementById("cartItems");
+  const totalBox = document.getElementById("total");
+  box.innerHTML = "";
+  let total = 0;
 
-  for(let i in cart){
-    total+=cart[i].price*cart[i].qty;
-    box.innerHTML+=`
+  for(let item in cart){
+    total += cart[item].price * cart[item].qty;
+    box.innerHTML += `
       <div class="cart-item">
-        ${i} x ${cart[i].qty}
-        <button onclick="removeItem('${i}')">X</button>
-      </div>`;
+        ${item} x ${cart[item].qty}
+        <button onclick="removeItem('${item}')">X</button>
+      </div>
+    `;
   }
-  totalBox.textContent=total;
+  totalBox.textContent = total;
 }
 
+/* =========================
+   WHATSAPP ORDER (FIXED)
+========================= */
 function sendWhatsApp(){
-  let msg="Order Details:%0A";
-  let total=0;
-  for(let i in cart){
-    msg+=`${i} x ${cart[i].qty} = ₹${cart[i].price*cart[i].qty}%0A`;
-    total+=cart[i].price*cart[i].qty;
+  if(Object.keys(cart).length === 0){
+    alert("Cart is empty");
+    return;
   }
-  msg+=`Total ₹${total}`;
-  window.open(`https://wa.me/91XXXXXXXXXX?text=${msg}`);
+
+  let msg = "Order Details:\n";
+  let total = 0;
+
+  for(let item in cart){
+    msg += `${item} x ${cart[item].qty} = ₹${cart[item].price * cart[item].qty}\n`;
+    total += cart[item].price * cart[item].qty;
+  }
+
+  msg += `\nTotal Amount: ₹${total}`;
+
+  const phone = "919642200422";
+  window.open(
+    `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
 }
 
-/* -------- REAL FIRE -------- */
-const c=document.getElementById("fireCanvas");
-const x=c.getContext("2d");
-resize(); window.onresize=resize;
-function resize(){c.width=innerWidth;c.height=innerHeight}
-let f=[];
-for(let i=0;i<150;i++)f.push({x:Math.random()*c.width,y:c.height,r:10+Math.random()*20,a:1});
-(function burn(){
-x.clearRect(0,0,c.width,c.height);
-f.forEach(e=>{
-x.fillStyle=`rgba(255,${Math.random()*120},0,${e.a})`;
-x.beginPath();x.arc(e.x,e.y,e.r,0,7);x.fill();
-e.y-=1.5;e.a-=.006;
-if(e.a<=0){e.y=c.height;e.a=1}
-});
-requestAnimationFrame(burn);
-})();
+/* =========================
+   REAL MOVING FIRE FLAMES
+========================= */
+const canvas = document.getElementById("fireCanvas");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+resize();
+addEventListener("resize", resize);
+
+let flames = [];
+for(let i=0;i<220;i++){
+  flames.push({
+    x: Math.random()*canvas.width,
+    y: canvas.height + Math.random()*200,
+    r: 10 + Math.random()*30,
+    speed: 1 + Math.random()*2,
+    a: 0.9
+  });
+}
+
+function animateFire(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  flames.forEach(f=>{
+    const g = ctx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);
+    g.addColorStop(0,`rgba(255,255,180,${f.a})`);
+    g.addColorStop(0.5,`rgba(255,120,0,${f.a})`);
+    g.addColorStop(1,"rgba(200,0,0,0)");
+    ctx.fillStyle=g;
+    ctx.beginPath();
+    ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+    ctx.fill();
+    f.y -= f.speed;
+    f.a -= 0.004;
+    if(f.a <= 0){
+      f.x = Math.random()*canvas.width;
+      f.y = canvas.height + 100;
+      f.a = 0.9;
+    }
+  });
+  requestAnimationFrame(animateFire);
+}
+animateFire();
