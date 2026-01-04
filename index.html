@@ -2,31 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Uyyaala Biryani | Special Offers</title>
+  <title>Uyyaala Biryani</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts (Paradise-like) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
+<nav class="navbar">
+  <img src="logo.jpeg" class="nav-logo" alt="Uyyaala Biryani">
+  <ul>
+    <li><a href="#combos">Menu</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#location">Location</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
 <header class="hero">
-  <img src="logo.jpeg" class="logo" alt="Uyyaala Biryani">
-  <h1>Uyyaala Biryani</h1>
-  <p>Authentic Taste · Home Delivery Available</p>
-  <a href="tel:9182900422" class="btn primary">Call Now</a>
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <h1>Uyyaala Biryani</h1>
+      <p>Authentic Dum Biryani · Home Delivery Available</p>
+      <a href="tel:9182900422" class="btn primary">Call Now</a>
+    </div>
+
+    <!-- SIDE QR -->
+    <div class="hero-qr">
+      <p>Scan to Order</p>
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/9182900422"
+        alt="WhatsApp Order QR">
+    </div>
+
+  </div>
 </header>
 
-<!-- OFFER STRIP -->
+<!-- HIGHLIGHT -->
 <section class="highlight">
   🎉 Special Offer ₹2499 — Free Silver Coin 🎉
 </section>
 
 <!-- COMBOS -->
-<section class="section">
+<section id="combos" class="section">
   <h2 class="section-title">Combo Offers</h2>
 
   <div class="grid">
@@ -49,8 +72,8 @@
 </section>
 
 <!-- ORDER -->
-<section class="section light-bg">
-  <h2 class="section-title">Place Your Order</h2>
+<section id="order" class="section light">
+  <h2 class="section-title">Order Now</h2>
 
   <div class="order-box">
     <input id="name" placeholder="Full Name">
@@ -58,23 +81,16 @@
     <textarea id="address" placeholder="Delivery Address"></textarea>
 
     <select id="branch" onchange="updateMap()">
-      <option value="Devarajugattu">Devarajugattu Branch</option>
-      <option value="Markapuram">Markapuram Branch</option>
+      <option value="Devarajugattu">Devarajugattu</option>
+      <option value="Markapuram">Markapuram</option>
     </select>
 
     <button class="btn whatsapp" onclick="sendWhatsApp()">Order via WhatsApp</button>
   </div>
 </section>
 
-<!-- QR -->
-<section class="section">
-  <h2 class="section-title">Scan to Order</h2>
-  <img class="qr"
-    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wa.me/9182900422">
-</section>
-
 <!-- MAP -->
-<section class="section light-bg">
+<section id="location" class="section">
   <h2 class="section-title">Our Location</h2>
   <iframe
     id="mapFrame"
@@ -85,22 +101,9 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Uyyaala Jampala Restaurant. All rights reserved.</p>
-  <p>
-    <a href="#terms">Terms & Conditions</a>
-  </p>
+  <p>© 2026 Uyyaala Biryani. All rights reserved.</p>
+  <p><a href="#">Terms & Conditions</a></p>
 </footer>
-
-<!-- TERMS -->
-<section id="terms" class="terms">
-  <h3>Terms & Conditions</h3>
-  <ul>
-    <li>Prices may vary by branch.</li>
-    <li>Offers valid for limited time.</li>
-    <li>Delivery subject to availability.</li>
-    <li>No cancellation after confirmation.</li>
-  </ul>
-</section>
 
 <script src="script.js"></script>
 </body>
