@@ -1,99 +1,107 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ఉయ్యాల బిర్యానీ – Special Offers</title>
+  <title>Uyyaala Biryani | Special Offers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Telugu Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <img src="logo.jpeg" class="logo" alt="Uyyaala Biryani Logo">
-  <h1>ఉయ్యాల బిర్యానీ</h1>
-  <p class="tagline">హోమ్ డెలివరీ అందుబాటులో ఉంది</p>
-  <a class="call-btn" href="tel:9182900422">📞 9182900422</a>
+<!-- HEADER -->
+<header class="hero">
+  <img src="logo.jpeg" class="logo" alt="Uyyaala Biryani">
+  <h1>Uyyaala Biryani</h1>
+  <p>Authentic Taste · Home Delivery Available</p>
+  <a href="tel:9182900422" class="btn primary">Call Now</a>
 </header>
 
-<!-- ================= SPECIAL OFFER ================= -->
-<section class="special-offer">
-  <h2>🎉 స్పెషల్ ఆఫర్ ₹2499 🎉</h2>
-  <p>సిల్వర్ కాయిన్ ఫ్రీ</p>
+<!-- OFFER STRIP -->
+<section class="highlight">
+  🎉 Special Offer ₹2499 — Free Silver Coin 🎉
 </section>
 
-<!-- ================= COMBO OFFERS ================= -->
-<section class="offers">
+<!-- COMBOS -->
+<section class="section">
+  <h2 class="section-title">Combo Offers</h2>
 
-  <div class="card">
-    <h3>Family Pack Biryani</h3>
-    <p class="price">₹599</p>
+  <div class="grid">
+    <div class="card">
+      <h3>Family Pack Biryani</h3>
+      <span class="price">₹599</span>
+    </div>
+
+    <div class="card">
+      <h3>Jumbo Pack Biryani</h3>
+      <span class="price">₹799</span>
+    </div>
+
+    <div class="card">
+      <h3>SP Combo</h3>
+      <p>5 Biryanis · 4 Starters</p>
+      <span class="price">₹1999</span>
+    </div>
   </div>
+</section>
 
-  <div class="card">
-    <h3>Jumbo Pack Biryani</h3>
-    <p class="price">₹799</p>
+<!-- ORDER -->
+<section class="section light-bg">
+  <h2 class="section-title">Place Your Order</h2>
+
+  <div class="order-box">
+    <input id="name" placeholder="Full Name">
+    <input id="phone" placeholder="Phone Number">
+    <textarea id="address" placeholder="Delivery Address"></textarea>
+
+    <select id="branch" onchange="updateMap()">
+      <option value="Devarajugattu">Devarajugattu Branch</option>
+      <option value="Markapuram">Markapuram Branch</option>
+    </select>
+
+    <button class="btn whatsapp" onclick="sendWhatsApp()">Order via WhatsApp</button>
   </div>
-
-  <div class="card">
-    <h3>SP Combo</h3>
-    <ul>
-      <li>5 Biryanis</li>
-      <li>4 Starters</li>
-    </ul>
-    <p class="price">₹1999</p>
-  </div>
-
 </section>
 
-<!-- ================= ORDER FORM ================= -->
-<section class="order">
-  <h2>📦 ఆర్డర్ చేయండి</h2>
-
-  <input type="text" id="name" placeholder="మీ పేరు">
-  <input type="tel" id="phone" placeholder="ఫోన్ నెంబర్">
-  <textarea id="address" placeholder="డెలివరీ అడ్రస్"></textarea>
-
-  <!-- Branch Selection -->
-  <select id="branch" onchange="updateMap()">
-    <option value="Hyderabad">హైదరాబాద్</option>
-    <option value="Devarajugattu">దేవరాజుగట్టు</option>
-    <option value="Markapuram">మార్కాపురం</option>
-  </select>
-
-  <button onclick="sendWhatsApp()">WhatsApp ద్వారా ఆర్డర్</button>
+<!-- QR -->
+<section class="section">
+  <h2 class="section-title">Scan to Order</h2>
+  <img class="qr"
+    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wa.me/9182900422">
 </section>
 
-<!-- ================= QR ORDER ================= -->
-<section class="qr">
-  <h2>📲 స్కాన్ చేసి ఆర్డర్ చేయండి</h2>
-  <img
-    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wa.me/9182900422"
-    alt="WhatsApp Order QR">
-</section>
-
-<!-- ================= MAP ================= -->
-<section class="map">
-  <h2>📍 మా బ్రాంచ్</h2>
+<!-- MAP -->
+<section class="section light-bg">
+  <h2 class="section-title">Our Location</h2>
   <iframe
     id="mapFrame"
-    src="https://www.google.com/maps?q=Hyderabad&output=embed"
+    src="https://www.google.com/maps?q=Devarajugattu,Andhra%20Pradesh&output=embed"
     loading="lazy">
   </iframe>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Uyyaala Biryani. All rights reserved.</p>
+  <p>© 2026 Uyyaala Jampala Restaurant. All rights reserved.</p>
+  <p>
+    <a href="#terms">Terms & Conditions</a>
+  </p>
 </footer>
 
-<!-- JS -->
-<script src="script.js"></script>
+<!-- TERMS -->
+<section id="terms" class="terms">
+  <h3>Terms & Conditions</h3>
+  <ul>
+    <li>Prices may vary by branch.</li>
+    <li>Offers valid for limited time.</li>
+    <li>Delivery subject to availability.</li>
+    <li>No cancellation after confirmation.</li>
+  </ul>
+</section>
 
+<script src="script.js"></script>
 </body>
 </html>
