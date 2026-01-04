@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Uyyala Jamapala Restaurant</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Uyyala Jamapala Restaurant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -28,12 +28,12 @@
       Place Order
     </a>
 
-    <!-- QR CODE -->
+    <!-- DESKTOP QR -->
     <div class="qr-container">
       <img
         class="qr"
         src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://wa.me/919642200422"
-        alt="WhatsApp QR Code"
+        alt="WhatsApp QR"
       >
       <span class="qr-text">Scan to Order</span>
     </div>
@@ -44,11 +44,9 @@
 <main id="menu"></main>
 
 <!-- CART -->
-<aside class="cart collapsed" id="cart">
-  <div class="cart-header" onclick="toggleCart()">
-    <h2>Cart</h2>
-    <span class="cart-toggle">▲</span>
-  </div>
+<aside class="cart" id="cart">
+
+  <h2>Cart</h2>
 
   <!-- MOBILE QR -->
   <div class="mobile-qr">
@@ -70,16 +68,21 @@
   </button>
 </aside>
 
-
-<script src="script.js"></script>
-  <a
+<!-- FLOATING WHATSAPP (MOBILE ONLY) -->
+<a
   href="https://wa.me/919642200422"
   target="_blank"
   class="wa-float"
   aria-label="Order on WhatsApp"
 >
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+  >
 </a>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
 
 </body>
 </html>
