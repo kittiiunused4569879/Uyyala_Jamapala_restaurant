@@ -25,11 +25,13 @@ function updateMap() {
   var branch = document.getElementById("branch").value;
   var map = document.getElementById("mapFrame");
 
-  if (branch === "hyderabad") {
+  if (branch === "Hyderabad") {
     map.src = "https://www.google.com/maps?q=Hyderabad&output=embed";
-  } else if (branch === "secunderabad") {
-    map.src = "https://www.google.com/maps?q=Secunderabad&output=embed";
-  } else if (branch === "warangal") {
-    map.src = "https://www.google.com/maps?q=Warangal&output=embed";
+  } 
+  else if (branch === "Devarajugattu") {
+    map.src = "https://www.google.com/maps?q=Devarajugattu&output=embed";
+  } 
+  else if (branch === "Markapuram") {
+    map.src = "https://www.google.com/maps?q=Markapuram&output=embed";
   }
 }
