@@ -10,13 +10,16 @@ function sendWhatsApp() {
   }
 
   var message =
-    "New Order%0A" +
-    "Name: " + name + "%0A" +
-    "Phone: " + phone + "%0A" +
-    "Address: " + address + "%0A" +
+    "New Order\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Address: " + address + "\n" +
     "Branch: " + branch;
 
-  window.open("https://wa.me/9182900422?text=" + message, "_blank");
+  window.open(
+    "https://wa.me/9182900422?text=" + encodeURIComponent(message),
+    "_blank"
+  );
 }
 
 function updateMap() {
