@@ -8,11 +8,12 @@
   <!-- Telugu Font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
 
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="header">
   <img src="logo.jpeg" class="logo" alt="Uyyaala Biryani Logo">
   <h1>ఉయ్యాల బిర్యానీ</h1>
@@ -20,13 +21,13 @@
   <a class="call-btn" href="tel:9182900422">📞 9182900422</a>
 </header>
 
-<!-- SPECIAL OFFER -->
+<!-- ================= SPECIAL OFFER ================= -->
 <section class="special-offer">
   <h2>🎉 స్పెషల్ ఆఫర్ ₹2499 🎉</h2>
   <p>సిల్వర్ కాయిన్ ఫ్రీ</p>
 </section>
 
-<!-- COMBO OFFERS -->
+<!-- ================= COMBO OFFERS ================= -->
 <section class="offers">
 
   <div class="card">
@@ -50,45 +51,49 @@
 
 </section>
 
-<!-- ORDER FORM -->
+<!-- ================= ORDER FORM ================= -->
 <section class="order">
   <h2>📦 ఆర్డర్ చేయండి</h2>
 
-  <input id="name" placeholder="మీ పేరు">
-  <input id="phone" placeholder="ఫోన్ నెంబర్">
+  <input type="text" id="name" placeholder="మీ పేరు">
+  <input type="tel" id="phone" placeholder="ఫోన్ నెంబర్">
   <textarea id="address" placeholder="డెలివరీ అడ్రస్"></textarea>
 
   <!-- Branch Selection -->
   <select id="branch" onchange="updateMap()">
-    <option value="hyderabad">హైదరాబాద్</option>
-    <option value="secunderabad">సికింద్రాబాద్</option>
-    <option value="warangal">వరంగల్</option>
+    <option value="Hyderabad">హైదరాబాద్</option>
+    <option value="Devarajugattu">దేవరాజుగట్టు</option>
+    <option value="Markapuram">మార్కాపురం</option>
   </select>
 
   <button onclick="sendWhatsApp()">WhatsApp ద్వారా ఆర్డర్</button>
 </section>
 
-<!-- QR ORDER -->
+<!-- ================= QR ORDER ================= -->
 <section class="qr">
   <h2>📲 స్కాన్ చేసి ఆర్డర్ చేయండి</h2>
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wa.me/9182900422"
-       alt="WhatsApp Order QR">
+  <img
+    src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https://wa.me/9182900422"
+    alt="WhatsApp Order QR">
 </section>
 
-<!-- MAP -->
+<!-- ================= MAP ================= -->
 <section class="map">
   <h2>📍 మా బ్రాంచ్</h2>
-  <iframe id="mapFrame"
+  <iframe
+    id="mapFrame"
     src="https://www.google.com/maps?q=Hyderabad&output=embed"
     loading="lazy">
   </iframe>
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <p>© 2026 Uyyaala Biryani. All rights reserved.</p>
 </footer>
 
+<!-- JS -->
 <script src="script.js"></script>
+
 </body>
 </html>
