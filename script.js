@@ -234,3 +234,23 @@ let flames = Array.from({length:120}, ()=>({
   });
   requestAnimationFrame(burn);
 })();
+/* =========================
+   CART TOGGLE + COUNT
+========================= */
+function toggleCartView(){
+  document.getElementById("cart").classList.toggle("show");
+}
+
+/* Update cart count */
+function updateCartCount(){
+  let count = 0;
+  Object.values(cart).forEach(i => count += i.qty);
+  document.getElementById("cartCount").textContent = count;
+}
+
+/* Hook into existing render */
+const originalRenderCart = renderCart;
+renderCart = function(){
+  originalRenderCart();
+  updateCartCount();
+};
