@@ -4,35 +4,28 @@ function sendWhatsApp() {
   var address = document.getElementById("address").value.trim();
   var branch = document.getElementById("branch").value;
 
-  if (name === "" || phone === "" || address === "") {
-    alert("దయచేసి అన్ని వివరాలు నమోదు చేయండి");
+  if (!name || !phone || !address) {
+    alert("Please fill all details");
     return;
   }
 
-  var adminNumber = "9182900422";
-
   var message =
-    "🛒 *New Biryani Order*%0A%0A" +
-    "👤 Name: " + name + "%0A" +
-    "📞 Phone: " + phone + "%0A" +
-    "🏠 Address: " + address + "%0A" +
-    "📍 Branch: " + branch;
+    "New Order%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Address: " + address + "%0A" +
+    "Branch: " + branch;
 
-  var url = "https://wa.me/" + adminNumber + "?text=" + message;
-  window.open(url, "_blank");
+  window.open("https://wa.me/9182900422?text=" + message, "_blank");
 }
 
 function updateMap() {
-  var branch = document.getElementById("branch").value;
   var map = document.getElementById("mapFrame");
+  var branch = document.getElementById("branch").value;
 
-  if (branch === "Hyderabad") {
-    map.src = "https://www.google.com/maps?q=Hyderabad&output=embed";
-  } 
-  else if (branch === "Devarajugattu") {
-    map.src = "https://www.google.com/maps?q=Devarajugattu&output=embed";
-  } 
-  else if (branch === "Markapuram") {
-    map.src = "https://www.google.com/maps?q=Markapuram&output=embed";
+  if (branch === "Devarajugattu") {
+    map.src = "https://www.google.com/maps?q=Devarajugattu,Andhra%20Pradesh&output=embed";
+  } else {
+    map.src = "https://www.google.com/maps?q=Markapuram,Andhra%20Pradesh&output=embed";
   }
 }
