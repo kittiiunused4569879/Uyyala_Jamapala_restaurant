@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Uyyaala Biryani</title>
+  <title>Uyyaala Biryani | Order Online</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -10,27 +10,62 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <img src="logo.jpeg" class="nav-logo">
+  <span>Uyyaala Biryani</span>
 </nav>
 
+<!-- HERO -->
 <header class="hero">
-  <!-- BACKGROUND IMAGE -->
   <div class="hero-bg"></div>
-
-  <!-- CANVAS FIRE -->
   <canvas id="fireCanvas"></canvas>
-
-  <!-- DARK OVERLAY -->
   <div class="overlay"></div>
 
-  <!-- CONTENT -->
   <div class="hero-content">
     <h1>Uyyaala Biryani</h1>
     <p>Authentic Dum Biryani · Home Delivery Available</p>
-    <a href="tel:9182900422" class="btn">Call Now</a>
+    <a href="#menu" class="btn">Order Now</a>
   </div>
 </header>
+
+<!-- MENU -->
+<section id="menu" class="section">
+  <h2>Menu</h2>
+
+  <div class="menu-category">
+    <h3>Biryanis</h3>
+    <div class="item"><span>Dum Biryani</span><span>₹219</span><button onclick="addToCart('Dum Biryani',219)">Add</button></div>
+    <div class="item"><span>SP Biryani</span><span>₹249</span><button onclick="addToCart('SP Biryani',249)">Add</button></div>
+    <div class="item"><span>Mutton Biryani</span><span>₹319</span><button onclick="addToCart('Mutton Biryani',319)">Add</button></div>
+  </div>
+
+  <div class="menu-category">
+    <h3>Starters</h3>
+    <div class="item"><span>Chicken 65</span><span>₹259</span><button onclick="addToCart('Chicken 65',259)">Add</button></div>
+    <div class="item"><span>Chilli Chicken</span><span>₹249</span><button onclick="addToCart('Chilli Chicken',249)">Add</button></div>
+  </div>
+
+  <div class="menu-category">
+    <h3>Veg Items</h3>
+    <div class="item"><span>Paneer Biryani</span><span>₹199</span><button onclick="addToCart('Paneer Biryani',199)">Add</button></div>
+    <div class="item"><span>Veg Biryani</span><span>₹179</span><button onclick="addToCart('Veg Biryani',179)">Add</button></div>
+  </div>
+</section>
+
+<!-- CART -->
+<section class="section light">
+  <h2>Your Cart</h2>
+  <div id="cart"></div>
+  <h3 id="total">Total: ₹0</h3>
+
+  <button class="btn whatsapp" onclick="placeOrder()">Place Order on WhatsApp</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 Uyyaala Biryani · <a href="#">Terms & Conditions</a>
+</footer>
 
 <script src="script.js"></script>
 </body>
