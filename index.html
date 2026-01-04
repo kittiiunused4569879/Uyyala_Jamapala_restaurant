@@ -44,16 +44,32 @@
 <main id="menu"></main>
 
 <!-- CART -->
-<aside class="cart">
-  <h2>Cart</h2>
+<aside class="cart collapsed" id="cart">
+  <div class="cart-header" onclick="toggleCart()">
+    <h2>Cart</h2>
+    <span class="cart-toggle">▲</span>
+  </div>
+
+  <!-- MOBILE QR -->
+  <div class="mobile-qr">
+    <img
+      src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/919642200422"
+      alt="WhatsApp QR"
+    >
+    <p>Scan to order on WhatsApp</p>
+  </div>
+
   <div id="cartItems"></div>
+
   <div class="cart-total">
     Total ₹<span id="total">0</span>
   </div>
+
   <button class="whatsapp" onclick="sendWhatsApp()">
     Place Order on WhatsApp
   </button>
 </aside>
+
 
 <script src="script.js"></script>
   <a
