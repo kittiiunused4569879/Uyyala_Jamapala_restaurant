@@ -94,7 +94,7 @@ body{
 ========================= */
 main{
   padding:20px;
-  margin-right:300px; /* space for cart (desktop) */
+  margin-right:300px; /* space for cart on desktop */
 }
 
 .section{
@@ -192,14 +192,14 @@ main{
 }
 
 /* =========================
-   🔥 MOBILE RESPONSIVE FIX
+   MOBILE RESPONSIVE FIX
 ========================= */
 @media (max-width: 768px) {
 
   /* MENU FULL WIDTH */
   main{
     margin-right:0;
-    padding-bottom:120px; /* space for cart */
+    padding-bottom:140px; /* space for bottom cart */
   }
 
   /* HEADER STACK */
@@ -240,17 +240,10 @@ main{
     left:0;
     right:0;
     top:auto;
-
     width:100%;
-    height:auto;
     max-height:45vh;
-
     border-top:2px solid #333;
     border-radius:16px 16px 0 0;
-  }
-
-  .cart h2{
-    font-size:18px;
   }
 
   .cart-total{
@@ -260,5 +253,34 @@ main{
   .whatsapp{
     font-size:15px;
     padding:10px;
+  }
+}
+
+/* =========================
+   FLOATING WHATSAPP (MOBILE ONLY)
+========================= */
+.wa-float{
+  display:none;
+  position:fixed;
+  right:16px;
+  bottom:90px; /* above mobile cart */
+  width:56px;
+  height:56px;
+  background:#25D366;
+  border-radius:50%;
+  box-shadow:0 8px 20px rgba(0,0,0,.35);
+  z-index:10000;
+  align-items:center;
+  justify-content:center;
+}
+
+.wa-float img{
+  width:32px;
+  height:32px;
+}
+
+@media (max-width:768px){
+  .wa-float{
+    display:flex;
   }
 }
