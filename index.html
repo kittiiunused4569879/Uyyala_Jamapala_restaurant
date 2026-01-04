@@ -5,105 +5,32 @@
   <title>Uyyaala Biryani</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts (Paradise-like) -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-  <img src="logo.jpeg" class="nav-logo" alt="Uyyaala Biryani">
-  <ul>
-    <li><a href="#combos">Menu</a></li>
-    <li><a href="#order">Order</a></li>
-    <li><a href="#location">Location</a></li>
-  </ul>
+  <img src="logo.jpeg" class="nav-logo">
 </nav>
 
-<!-- HERO -->
 <header class="hero">
-  <div class="hero-inner">
+  <!-- BACKGROUND IMAGE -->
+  <div class="hero-bg"></div>
 
-    <div class="hero-content">
-      <h1>Uyyaala Biryani</h1>
-      <p>Authentic Dum Biryani · Home Delivery Available</p>
-      <a href="tel:9182900422" class="btn primary">Call Now</a>
-    </div>
+  <!-- CANVAS FIRE -->
+  <canvas id="fireCanvas"></canvas>
 
-    <!-- SIDE QR -->
-    <div class="hero-qr">
-      <p>Scan to Order</p>
-      <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=https://wa.me/9182900422"
-        alt="WhatsApp Order QR">
-    </div>
+  <!-- DARK OVERLAY -->
+  <div class="overlay"></div>
 
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <h1>Uyyaala Biryani</h1>
+    <p>Authentic Dum Biryani · Home Delivery Available</p>
+    <a href="tel:9182900422" class="btn">Call Now</a>
   </div>
 </header>
-
-<!-- HIGHLIGHT -->
-<section class="highlight">
-  🎉 Special Offer ₹2499 — Free Silver Coin 🎉
-</section>
-
-<!-- COMBOS -->
-<section id="combos" class="section">
-  <h2 class="section-title">Combo Offers</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Family Pack Biryani</h3>
-      <span class="price">₹599</span>
-    </div>
-
-    <div class="card">
-      <h3>Jumbo Pack Biryani</h3>
-      <span class="price">₹799</span>
-    </div>
-
-    <div class="card">
-      <h3>SP Combo</h3>
-      <p>5 Biryanis · 4 Starters</p>
-      <span class="price">₹1999</span>
-    </div>
-  </div>
-</section>
-
-<!-- ORDER -->
-<section id="order" class="section light">
-  <h2 class="section-title">Order Now</h2>
-
-  <div class="order-box">
-    <input id="name" placeholder="Full Name">
-    <input id="phone" placeholder="Phone Number">
-    <textarea id="address" placeholder="Delivery Address"></textarea>
-
-    <select id="branch" onchange="updateMap()">
-      <option value="Devarajugattu">Devarajugattu</option>
-      <option value="Markapuram">Markapuram</option>
-    </select>
-
-    <button class="btn whatsapp" onclick="sendWhatsApp()">Order via WhatsApp</button>
-  </div>
-</section>
-
-<!-- MAP -->
-<section id="location" class="section">
-  <h2 class="section-title">Our Location</h2>
-  <iframe
-    id="mapFrame"
-    src="https://www.google.com/maps?q=Devarajugattu,Andhra%20Pradesh&output=embed"
-    loading="lazy">
-  </iframe>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 Uyyaala Biryani. All rights reserved.</p>
-  <p><a href="#">Terms & Conditions</a></p>
-</footer>
 
 <script src="script.js"></script>
 </body>
