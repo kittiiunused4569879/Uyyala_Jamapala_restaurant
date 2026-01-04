@@ -4,7 +4,7 @@ function sendWhatsApp() {
   var address = document.getElementById("address").value.trim();
   var branch = document.getElementById("branch").value;
 
-  if (!name || !phone || !address) {
+  if (name === "" || phone === "" || address === "") {
     alert("దయచేసి అన్ని వివరాలు నమోదు చేయండి");
     return;
   }
@@ -18,7 +18,8 @@ function sendWhatsApp() {
     "🏠 Address: " + address + "%0A" +
     "📍 Branch: " + branch;
 
-  window.open("https://wa.me/" + adminNumber + "?text=" + message, "_blank");
+  var url = "https://wa.me/" + adminNumber + "?text=" + message;
+  window.open(url, "_blank");
 }
 
 function updateMap() {
