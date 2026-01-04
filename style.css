@@ -284,3 +284,55 @@ main{
     display:flex;
   }
 }
+/* =========================
+   MOBILE CART COLLAPSE + QR
+========================= */
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+}
+
+.cart-toggle{
+  font-size:18px;
+}
+
+/* QR hidden on desktop */
+.mobile-qr{
+  display:none;
+  text-align:center;
+  margin:10px 0;
+}
+
+.mobile-qr img{
+  width:160px;
+  height:160px;
+  background:#fff;
+  padding:6px;
+  border-radius:12px;
+}
+
+.mobile-qr p{
+  font-size:13px;
+  color:#ccc;
+  margin-top:6px;
+}
+
+@media (max-width:768px){
+
+  /* show QR on mobile */
+  .mobile-qr{
+    display:block;
+  }
+
+  /* collapsed cart */
+  .cart.collapsed{
+    max-height:70px;
+    overflow:hidden;
+  }
+
+  .cart{
+    transition:max-height 0.3s ease;
+  }
+}
