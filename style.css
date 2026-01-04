@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET
+========================= */
 *{
   box-sizing:border-box;
   margin:0;
@@ -10,29 +13,88 @@ body{
   color:#fff;
 }
 
+/* =========================
+   FIRE CANVAS
+========================= */
 #fireCanvas{
   position:fixed;
   inset:0;
   z-index:-1;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 .header{
   display:flex;
+  justify-content:space-between;
   align-items:center;
-  gap:15px;
-  padding:15px;
-  background:rgba(0,0,0,0.7);
+  padding:18px 24px;
+  background:rgba(0,0,0,0.75);
 }
 
+.header-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+/* LOGO SIZE */
 .logo{
-  height:60px;
+  height:100px;
+  width:auto;
 }
 
-/* MENU */
+.header-left h1{
+  font-size:30px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{
+  background:#25D366;
+  color:#fff;
+  padding:12px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:16px;
+}
+
+/* QR CODE */
+.qr-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+.qr{
+  width:120px;
+  height:120px;
+  background:#fff;
+  padding:6px;
+  border-radius:12px;
+}
+
+.qr-text{
+  font-size:12px;
+  color:#ccc;
+}
+
+/* =========================
+   MENU LAYOUT
+========================= */
 main{
   padding:20px;
-  margin-right:300px;
+  margin-right:300px; /* space for cart (desktop) */
 }
 
 .section{
@@ -61,7 +123,7 @@ main{
   align-items:center;
 }
 
-/* IMAGE FIX */
+/* FOOD IMAGE */
 .item img{
   width:90px;
   height:90px;
@@ -80,7 +142,9 @@ main{
   cursor:pointer;
 }
 
-/* CART */
+/* =========================
+   CART (DESKTOP)
+========================= */
 .cart{
   position:fixed;
   top:0;
@@ -90,6 +154,11 @@ main{
   background:#111;
   padding:15px;
   overflow:auto;
+  z-index:1000;
+}
+
+.cart h2{
+  margin-bottom:10px;
 }
 
 .cart-item{
@@ -119,4 +188,77 @@ main{
   color:#fff;
   font-size:16px;
   border-radius:8px;
+  cursor:pointer;
+}
+
+/* =========================
+   🔥 MOBILE RESPONSIVE FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* MENU FULL WIDTH */
+  main{
+    margin-right:0;
+    padding-bottom:120px; /* space for cart */
+  }
+
+  /* HEADER STACK */
+  .header{
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+
+  .header-left{
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .logo{
+    height:70px;
+  }
+
+  .header-left h1{
+    font-size:22px;
+    white-space:normal;
+  }
+
+  .header-right{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .qr{
+    width:90px;
+    height:90px;
+  }
+
+  /* CART MOVES TO BOTTOM */
+  .cart{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    top:auto;
+
+    width:100%;
+    height:auto;
+    max-height:45vh;
+
+    border-top:2px solid #333;
+    border-radius:16px 16px 0 0;
+  }
+
+  .cart h2{
+    font-size:18px;
+  }
+
+  .cart-total{
+    font-size:16px;
+  }
+
+  .whatsapp{
+    font-size:15px;
+    padding:10px;
+  }
 }
