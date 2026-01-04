@@ -1,105 +1,122 @@
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-margin:0;
-font-family:Poppins,Arial;
-background:#000;
-color:#fff;
+  font-family:Poppins, Arial, sans-serif;
+  background:#000;
+  color:#fff;
 }
 
 #fireCanvas{
-position:fixed;
-inset:0;
-z-index:-1;
+  position:fixed;
+  inset:0;
+  z-index:-1;
 }
 
+/* HEADER */
 .header{
-display:flex;
-align-items:center;
-gap:15px;
-padding:15px;
-background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  background:rgba(0,0,0,0.7);
 }
 
-.logo{height:60px}
+.logo{
+  height:60px;
+}
 
+/* MENU */
 main{
-padding:20px;
-margin-right:300px;
+  padding:20px;
+  margin-right:300px;
 }
 
 .section{
-margin-bottom:40px;
+  margin-bottom:40px;
 }
 
 .section h2{
-color:#ffcc00;
-border-bottom:2px solid #ff6600;
-padding-bottom:5px;
-margin-bottom:15px;
+  color:#ffcc00;
+  border-bottom:2px solid #ff6600;
+  padding-bottom:6px;
+  margin-bottom:15px;
 }
 
 .items{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:15px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
 }
 
 .item{
-background:rgba(0,0,0,.65);
-padding:12px;
-border-radius:12px;
-display:flex;
-gap:12px;
-align-items:center;
+  background:rgba(0,0,0,0.65);
+  border-radius:12px;
+  padding:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
 }
 
+/* IMAGE FIX */
 .item img{
-width:90px;
-height:90px;
-object-fit:cover;
-border-radius:10px;
+  width:90px;
+  height:90px;
+  object-fit:cover;
+  border-radius:10px;
+  flex-shrink:0;
 }
 
 .item button{
-background:#ff6600;
-border:none;
-color:#fff;
-padding:6px 10px;
-border-radius:6px;
-cursor:pointer;
+  margin-top:6px;
+  background:#ff6600;
+  border:none;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:6px;
+  cursor:pointer;
 }
 
+/* CART */
 .cart{
-position:fixed;
-right:0;
-top:0;
-width:280px;
-height:100%;
-background:#111;
-padding:15px;
-overflow:auto;
+  position:fixed;
+  top:0;
+  right:0;
+  width:280px;
+  height:100%;
+  background:#111;
+  padding:15px;
+  overflow:auto;
 }
 
 .cart-item{
-display:flex;
-justify-content:space-between;
-margin-bottom:8px;
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:8px;
 }
 
 .cart-item button{
-background:red;
-border:none;
-color:#fff;
-cursor:pointer;
+  background:red;
+  border:none;
+  color:#fff;
+  cursor:pointer;
+}
+
+.cart-total{
+  margin-top:10px;
+  font-size:18px;
 }
 
 .whatsapp{
-width:100%;
-padding:10px;
-background:#25D366;
-border:none;
-color:#fff;
-border-radius:8px;
-font-size:16px;
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#25D366;
+  border:none;
+  color:#fff;
+  font-size:16px;
+  border-radius:8px;
 }
