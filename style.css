@@ -361,3 +361,30 @@ main{
     display:none !important;   /* hide CART QR */
   }
 }
+/* =========================
+   MOBILE SIDE CART (FINAL OVERRIDE)
+========================= */
+@media (max-width: 768px){
+
+  /* FORCE cart to side, not bottom */
+  .cart{
+    position: fixed !important;
+    right: 12px !important;
+    bottom: 90px !important;   /* above WhatsApp float */
+    left: auto !important;
+    top: auto !important;
+
+    width: 260px !important;
+    max-height: 55vh !important;
+    overflow-y: auto !important;
+
+    border-radius: 14px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6) !important;
+    background: #111 !important;
+  }
+
+  /* Make sure menu is not pushed */
+  main{
+    padding-bottom: 120px !important;
+  }
+}
