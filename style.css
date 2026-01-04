@@ -6,34 +6,37 @@
 body {
   margin: 0;
   background: #fff2e6;
+  color: #333;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   background: linear-gradient(to right, #ff6f00, #d84315);
-  color: white;
+  color: #ffffff;
   text-align: center;
-  padding: 20px;
+  padding: 20px 15px;
 }
 
 .logo {
   width: 90px;
+  height: auto;
   margin-bottom: 10px;
 }
 
 .header h1 {
   margin: 0;
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .tagline {
   font-size: 14px;
+  margin-top: 4px;
 }
 
 .call-btn {
   display: inline-block;
   margin-top: 10px;
-  background: white;
+  background: #ffffff;
   color: #d84315;
   padding: 10px 16px;
   border-radius: 8px;
@@ -41,15 +44,19 @@ body {
   font-weight: bold;
 }
 
-/* SPECIAL OFFER */
+/* ================= SPECIAL OFFER ================= */
 .special-offer {
   background: #ffd54f;
   text-align: center;
-  padding: 14px;
+  padding: 15px 10px;
   font-weight: bold;
 }
 
-/* OFFERS */
+.special-offer h2 {
+  margin: 0;
+}
+
+/* ================= OFFERS ================= */
 .offers {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -59,25 +66,44 @@ body {
 
 .card {
   background: #ff5722;
-  color: white;
+  color: #ffffff;
   border-radius: 18px;
   padding: 18px;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
 }
 
+.card h3 {
+  margin-top: 0;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.card ul li {
+  margin-bottom: 4px;
+}
+
 .price {
-  font-size: 34px;
+  font-size: 36px;
   font-weight: bold;
   margin-top: 10px;
   color: #fffde7;
 }
 
-/* ORDER */
+/* ================= ORDER ================= */
 .order {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
   text-align: center;
+}
+
+.order h2 {
+  margin-top: 0;
 }
 
 .order input,
@@ -87,6 +113,14 @@ body {
   max-width: 420px;
   margin: 8px 0;
   padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.order textarea {
+  resize: none;
+  height: 80px;
 }
 
 .order button {
@@ -97,9 +131,14 @@ body {
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-/* QR */
+.order button:hover {
+  background: #1ebe5d;
+}
+
+/* ================= QR ================= */
 .qr {
   text-align: center;
   padding: 20px;
@@ -109,23 +148,42 @@ body {
   margin-top: 10px;
   border: 6px solid #ff6f00;
   border-radius: 12px;
+  width: 220px;
+  height: 220px;
 }
 
-/* MAP */
+/* ================= MAP ================= */
 .map {
   padding: 20px;
+}
+
+.map h2 {
+  text-align: center;
 }
 
 .map iframe {
   width: 100%;
   height: 300px;
   border: 0;
+  border-radius: 10px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   background: #d84315;
   color: white;
   text-align: center;
   padding: 12px;
+  font-size: 14px;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 26px;
+  }
+
+  .price {
+    font-size: 30px;
+  }
 }
