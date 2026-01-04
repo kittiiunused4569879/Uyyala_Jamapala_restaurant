@@ -8,22 +8,51 @@
 </head>
 <body>
 
-<!-- FIRE CANVAS -->
+<!-- FIRE BACKGROUND -->
 <canvas id="fireCanvas"></canvas>
 
+<!-- HEADER -->
 <header class="header">
-  <img src="logo.jpeg" class="logo">
-  <h1>Uyyala Jamapala Restaurant</h1>
+  <div class="header-left">
+    <img src="logo.jpeg" class="logo" alt="Logo">
+    <h1>Uyyala Jamapala Restaurant</h1>
+  </div>
+
+  <div class="header-right">
+    <!-- WhatsApp DIRECT LINK -->
+    <a
+      href="https://wa.me/919642200422"
+      target="_blank"
+      class="whatsapp-btn"
+    >
+      Place Order
+    </a>
+
+    <!-- QR CODE -->
+    <div class="qr-container">
+      <img
+        class="qr"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://wa.me/919642200422"
+        alt="WhatsApp QR Code"
+      >
+      <span class="qr-text">Scan to Order</span>
+    </div>
+  </div>
 </header>
 
+<!-- MENU -->
 <main id="menu"></main>
 
 <!-- CART -->
 <aside class="cart">
   <h2>Cart</h2>
   <div id="cartItems"></div>
-  <div class="cart-total">Total ₹<span id="total">0</span></div>
-  <button class="whatsapp" onclick="sendWhatsApp()">Place Order on WhatsApp</button>
+  <div class="cart-total">
+    Total ₹<span id="total">0</span>
+  </div>
+  <button class="whatsapp" onclick="sendWhatsApp()">
+    Place Order on WhatsApp
+  </button>
 </aside>
 
 <script src="script.js"></script>
