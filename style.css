@@ -336,3 +336,28 @@ main{
     transition:max-height 0.3s ease;
   }
 }
+/* =========================
+   QR VISIBILITY CONTROL
+========================= */
+
+/* MOBILE: show only CART QR */
+@media (max-width:768px){
+  .qr-container{
+    display:none !important;   /* hide HEADER QR */
+  }
+
+  .mobile-qr{
+    display:block !important;  /* show CART QR */
+  }
+}
+
+/* DESKTOP: show only HEADER QR */
+@media (min-width:769px){
+  .qr-container{
+    display:flex !important;   /* show HEADER QR */
+  }
+
+  .mobile-qr{
+    display:none !important;   /* hide CART QR */
+  }
+}
