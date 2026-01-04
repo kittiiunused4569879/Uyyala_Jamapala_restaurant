@@ -388,3 +388,43 @@ main{
     padding-bottom: 120px !important;
   }
 }
+/* =========================
+   AMAZON-STYLE CART BUTTON
+========================= */
+
+/* Floating cart button */
+.cart-fab{
+  position: fixed;
+  right: 14px;
+  top: 45%;
+  background: #ff9900;
+  color: #000;
+  padding: 12px 14px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  z-index: 11000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* Hide cart by default */
+.cart{
+  transform: translateX(110%);
+  transition: transform 0.3s ease;
+}
+
+/* Show cart when active */
+.cart.show{
+  transform: translateX(0);
+}
+
+/* Mobile sizing */
+@media (max-width:768px){
+  .cart{
+    width: 260px;
+    right: 10px;
+    bottom: 90px;
+    top: auto;
+  }
+}
