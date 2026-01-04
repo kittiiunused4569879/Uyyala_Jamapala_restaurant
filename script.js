@@ -14,187 +14,141 @@ function getCategoryImage(section){
    FULL MENU DATA (2 POSTERS)
 ========================= */
 const menuData = {
-
-  /* Poster-1 Left */
   "Soups": [
-    ["Chicken Soup", 99],
-    ["Corn Soup", 79],
-    ["Veg Hot & Sour Soup", 79],
-    ["Chicken Hot & Sour Soup", 99]
+    {name:"Chicken Soup", price:99},
+    {name:"Corn Soup", price:79},
+    {name:"Veg Hot & Sour Soup", price:79},
+    {name:"Chicken Hot & Sour Soup", price:99}
   ],
 
   "Veg Starters": [
-    ["Gobhi 65", 189],
-    ["Gobhi Manchuria", 189],
-    ["Paneer 65", 199],
-    ["Paneer Manchuria", 199],
-    ["Chilly Paneer", 209],
-    ["Mushroom 65", 199],
-    ["Mushroom Manchuria", 189],
-    ["Chilly Babycorn", 179],
-    ["Onion Pakoda", 149],
-    ["Crispy Veg", 159],
-    ["Crispy Corn", 149],
-    ["Kaju Roast", 269],
-    ["Capsicum Pakoda", 169],
-    ["Palli Masala", 99]
+    {name:"Gobhi 65", price:189},
+    {name:"Gobhi Manchuria", price:189},
+    {name:"Paneer 65", price:199},
+    {name:"Paneer Manchuria", price:199},
+    {name:"Chilly Paneer", price:209},
+    {name:"Mushroom 65", price:199},
+    {name:"Mushroom Manchuria", price:189},
+    {name:"Chilly Babycorn", price:179},
+    {name:"Onion Pakoda", price:149},
+    {name:"Crispy Veg", price:159},
+    {name:"Crispy Corn", price:149},
+    {name:"Kaju Roast", price:269},
+    {name:"Capsicum Pakoda", price:169},
+    {name:"Palli Masala", price:99}
   ],
 
   "Veg Biryanis": [
-    ["Veg Biryani", 179],
-    ["Paneer Biryani", 199],
-    ["Kaju Biryani", 249],
-    ["Mushroom Biryani", 199],
-    ["Mixed Veg Biryani", 199]
+    {name:"Veg Biryani", price:179},
+    {name:"Paneer Biryani", price:199},
+    {name:"Kaju Biryani", price:249},
+    {name:"Mushroom Biryani", price:199},
+    {name:"Mixed Veg Biryani", price:199}
   ],
 
   "Veg Currys": [
-    ["Paneer Butter Masala", 219],
-    ["Mushroom Masala", 199],
-    ["Kaju Paneer", 249],
-    ["Kaju Tomato", 229],
-    ["Baby Corn Masala", 199],
-    ["Mixed Veg Curry", 189],
-    ["Egg Bhurji", 149],
-    ["Double Egg Omlet", 59]
+    {name:"Paneer Butter Masala", price:219},
+    {name:"Mushroom Masala", price:199},
+    {name:"Kaju Paneer", price:249},
+    {name:"Kaju Tomato", price:229},
+    {name:"Baby Corn Masala", price:199},
+    {name:"Mixed Veg Curry", price:189},
+    {name:"Egg Bhurji", price:149},
+    {name:"Double Egg Omlet", price:59}
   ],
 
-  /* Poster-1 Right */
   "Chinese Starters Nonveg": [
-    ["Chicken Lollypops", 299],
-    ["Chicken Drumsticks", 289],
-    ["Chicken 65", 259],
-    ["Chilly Chicken", 249],
-    ["Chicken 555", 259],
-    ["Chicken Megestick", 269],
-    ["Dragon Chicken", 269],
-    ["Kajunut Chicken", 279],
-    ["Lemon Chicken", 249],
-    ["Garlic Chicken", 249],
-    ["Shezwan Chicken", 279],
-    ["Loose Chicken", 299],
-    ["Hongkong Chicken", 249],
-    ["Chicken Chips", 299],
-    ["Chicken Manchuria", 259],
-    ["Kamjupitta Roast", 259],
-    ["Classic Chicken", 299],
-    ["Chilly Egg", 149],
-    ["Egg 65", 169]
+    {name:"Chicken Lollypops", price:299},
+    {name:"Chicken Drumsticks", price:289},
+    {name:"Chicken 65", price:259},
+    {name:"Chilly Chicken", price:249},
+    {name:"Chicken 555", price:259},
+    {name:"Dragon Chicken", price:269},
+    {name:"Garlic Chicken", price:249},
+    {name:"Chicken Manchuria", price:259}
   ],
 
   "Non Veg Biryanis": [
-    ["Dum Biryani", 219],
-    ["Fry Piece Biryani", 229],
-    ["SP Biryani", 249],
-    ["Moghalai Biryani", 249],
-    ["Lollipop Biryani", 289],
-    ["Dilkush Biryani", 299],
-    ["Joint Biryani", 299],
-    ["Mutton Biryani", 319],
-    ["Fish Biryani", 309],
-    ["Prawns Biryani", 329],
-    ["Egg Biryani", 159],
-    ["SP Natukodi Biryani", 339]
+    {name:"Dum Biryani", price:219},
+    {name:"Fry Piece Biryani", price:229},
+    {name:"SP Biryani", price:249},
+    {name:"Mutton Biryani", price:319},
+    {name:"Egg Biryani", price:159}
   ],
 
-  /* Poster-2 Left */
   "Rice Items": [
-    ["Veg Fried Rice", 159],
-    ["Chicken Fried Rice", 199],
-    ["Zeera Rice", 149],
-    ["Kaju Rice", 199],
-    ["Mushroom Fried Rice", 159],
-    ["Biryani Rice", 129],
-    ["Curd Rice", 69]
+    {name:"Veg Fried Rice", price:159},
+    {name:"Chicken Fried Rice", price:199},
+    {name:"Zeera Rice", price:149},
+    {name:"Curd Rice", price:69}
   ],
 
+  /* SPLIT PRICE ITEMS */
   "Indian Nonveg Currys": [
-    ["Chicken Curry Bone / Boneless", "199/249"],
-    ["Butter Chicken", 259],
-    ["Andhra Chicken", 269],
-    ["Egg Curry", 149],
-    ["Natukodi Curry", 349],
-    ["Prawns Curry", 329],
-    ["Kadai Chicken", 259],
-    ["Moghaloy Chicken", 269],
-    ["Hyderabad Chicken", 259]
-  ],
-
-  "Fish Starters": [
-    ["Apollo Fish", 319],
-    ["Chilly Fish", 309],
-    ["Loose Prawns", 329],
-    ["Chilly Prawns", 319],
-    ["Prawns 65", 329]
+    {name:"Chicken Curry (Bone)", price:199},
+    {name:"Chicken Curry (Boneless)", price:249},
+    {name:"Butter Chicken", price:259},
+    {name:"Andhra Chicken", price:269}
   ],
 
   "Tandoori Chicken": [
-    ["Tandoori Chicken half / Full", "189/379"],
-    ["Tangdi Kabab", 299],
-    ["Chicken Tikka", 259],
-    ["Paneer Tikka", 219]
+    {name:"Tandoori Chicken (Half)", price:189},
+    {name:"Tandoori Chicken (Full)", price:379},
+    {name:"Tangdi Kabab", price:299},
+    {name:"Chicken Tikka", price:259}
   ],
 
   "Nauty Non’s": [
-    ["Tandoori Roti", 29],
-    ["Butter Non", 39],
-    ["Plain Non", 29],
-    ["Garlic Non", 49],
-    ["Masala kulcha", 59],
-    ["Butter Roti", 39],
-    ["Aloo Parotha", 79],
-    ["Paneer Parotha", 89]
+    {name:"Tandoori Roti", price:29},
+    {name:"Butter Naan", price:39},
+    {name:"Plain Naan", price:29},
+    {name:"Garlic Naan", price:49},
+    {name:"Masala Kulcha", price:59}
   ]
 };
 
 /* =========================
-   RENDER MENU
+   RENDER MENU (SAFE)
 ========================= */
 const menu = document.getElementById("menu");
 menu.innerHTML = "";
 
-for (const section in menuData) {
+Object.entries(menuData).forEach(([section, items])=>{
   const block = document.createElement("div");
   block.className = "section";
   block.innerHTML = `<h2>${section}</h2><div class="items"></div>`;
   const itemsDiv = block.querySelector(".items");
 
-  menuData[section].forEach(([name, price]) => {
-    // handle "199/249" style
-    const priceText = typeof price === "number" ? `₹${price}` : `₹${price}`;
-    const addPrice = (typeof price === "number") ? price : null;
-
-    itemsDiv.innerHTML += `
-      <div class="item">
-        <img src="${getCategoryImage(section)}" alt="${section}">
-        <div>
-          <strong>${name}</strong><br>
-          ${priceText}<br>
-          ${
-            addPrice !== null
-              ? `<button onclick="addToCart('${escapeQuotes(name)}', ${addPrice})">Add</button>`
-              : `<button onclick="alert('Select price manually: ${priceText}')">Add</button>`
-          }
-        </div>
+  items.forEach(item=>{
+    const card = document.createElement("div");
+    card.className = "item";
+    card.innerHTML = `
+      <img src="${getCategoryImage(section)}" alt="${item.name}">
+      <div>
+        <strong>${item.name}</strong><br>
+        ₹${item.price}<br>
+        <button>Add</button>
       </div>
     `;
+
+    card.querySelector("button").addEventListener("click", ()=>{
+      addToCart(item.name, item.price);
+    });
+
+    itemsDiv.appendChild(card);
   });
 
   menu.appendChild(block);
-}
-
-function escapeQuotes(str){
-  return String(str).replace(/'/g, "\\'");
-}
+});
 
 /* =========================
-   CART LOGIC
+   CART LOGIC (WORKING)
 ========================= */
 let cart = {};
 
 function addToCart(name, price){
   if(cart[name]) cart[name].qty++;
-  else cart[name] = { price, qty: 1 };
+  else cart[name] = {price, qty:1};
   renderCart();
 }
 
@@ -209,24 +163,23 @@ function renderCart(){
   box.innerHTML = "";
   let total = 0;
 
-  Object.keys(cart).forEach(item=>{
-    total += cart[item].price * cart[item].qty;
-    box.innerHTML += `
-      <div class="cart-item">
-        ${item} x ${cart[item].qty}
-        <button onclick="removeItem('${escapeQuotes(item)}')">X</button>
-      </div>
-    `;
+  Object.entries(cart).forEach(([name,item])=>{
+    total += item.price * item.qty;
+    const row = document.createElement("div");
+    row.className = "cart-item";
+    row.innerHTML = `${name} x ${item.qty} <button>X</button>`;
+    row.querySelector("button").addEventListener("click", ()=>removeItem(name));
+    box.appendChild(row);
   });
 
   totalBox.textContent = total;
 }
 
 /* =========================
-   WHATSAPP (MOBILE SAFE)
+   WHATSAPP
 ========================= */
 function sendWhatsApp(){
-  if(Object.keys(cart).length === 0){
+  if(!Object.keys(cart).length){
     alert("Cart is empty");
     return;
   }
@@ -234,20 +187,21 @@ function sendWhatsApp(){
   let msg = "Order Details:\n";
   let total = 0;
 
-  Object.keys(cart).forEach(item=>{
-    msg += `${item} x ${cart[item].qty} = ₹${cart[item].price * cart[item].qty}\n`;
-    total += cart[item].price * cart[item].qty;
+  Object.entries(cart).forEach(([name,item])=>{
+    msg += `${name} x ${item.qty} = ₹${item.price * item.qty}\n`;
+    total += item.price * item.qty;
   });
 
-  msg += `\nTotal Amount: ₹${total}`;
+  msg += `\nTotal: ₹${total}`;
 
-  const phone = "919642200422";
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-  window.open(url, "_blank");
+  window.open(
+    `https://wa.me/919642200422?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
 }
 
 /* =========================
-   FIRE BACKGROUND (REDUCED INTENSITY)
+   FIRE BACKGROUND
 ========================= */
 const canvas = document.getElementById("fireCanvas");
 const ctx = canvas.getContext("2d");
@@ -259,37 +213,24 @@ function resize(){
 resize();
 addEventListener("resize", resize);
 
-let flames = [];
-for(let i=0;i<120;i++){
-  flames.push({
-    x:Math.random()*canvas.width,
-    y:canvas.height + Math.random()*120,
-    r:8 + Math.random()*18,
-    s:0.8 + Math.random()*1.2,
-    a:0.35
-  });
-}
+let flames = Array.from({length:120}, ()=>({
+  x:Math.random()*innerWidth,
+  y:innerHeight+Math.random()*120,
+  r:8+Math.random()*18,
+  s:.8+Math.random()*1.2,
+  a:.35
+}));
 
 (function burn(){
-  ctx.fillStyle = "rgba(0,0,0,0.25)";
+  ctx.fillStyle="rgba(0,0,0,.25)";
   ctx.fillRect(0,0,canvas.width,canvas.height);
-
   flames.forEach(f=>{
-    const g = ctx.createRadialGradient(f.x,f.y,0,f.x,f.y,f.r);
-    g.addColorStop(0,`rgba(255,220,160,${f.a})`);
-    g.addColorStop(0.5,`rgba(255,120,0,${f.a})`);
-    g.addColorStop(1,"rgba(200,0,0,0)");
-    ctx.fillStyle = g;
     ctx.beginPath();
+    ctx.fillStyle=`rgba(255,120,0,${f.a})`;
     ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
     ctx.fill();
-
-    f.y -= f.s;
-    if(f.y < -50){
-      f.x = Math.random()*canvas.width;
-      f.y = canvas.height + 120;
-    }
+    f.y-=f.s;
+    if(f.y<0){f.y=canvas.height;f.x=Math.random()*canvas.width;}
   });
-
   requestAnimationFrame(burn);
 })();
