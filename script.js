@@ -293,3 +293,7 @@ for(let i=0;i<120;i++){
 
   requestAnimationFrame(burn);
 })();
+function toggleCart(){
+  const cart = document.getElementById("cart");
+  cart.classList.toggle("collapsed");
+}
